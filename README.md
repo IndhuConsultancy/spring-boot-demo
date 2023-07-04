@@ -56,6 +56,16 @@
 2.1 File -> import and select Projects from Git and click Next
 2.2 Select Clone URI and click next
 2.3 Paste the repo url in URI field, then input GitHub credentials and click Next.
-3. Add .gitIgnore:
-3.1   
+3. Setting up SSH connection with GitHub:
+3.1 Install ssh-agent in your OS.
+3.2 If windows, open a terminal with admin priveleges and set startType to manual by using this command ```Get-Service -Name ssh-agent | Set-Service -StartupType Manual```.
+3.2 Create an RSA key with this command ```ssh-keygen -t rsa -b 4096 -C "indhu.consultancy.services@gmail.com"```.
+3.3 Add the key to ssh by this command ```ssh-add .\indhu.consultancy.services@gmail.com_github```.
+3.4 Copy the contents public key file and add it to ```Github -> Settings -> SSH -> Add SSH -> name a tile and paste the content in SSH-key field```
+3.5 Check if connections is established using this command ``` ssh -T git@github.com```
+4. Setting up Git user in local repo:
+4.1 Go to the location in which the repo is present
+4.2 Configure user email using ```git config user.email indhu.consultancy.services@gmail.com```
+4.3
+
 
