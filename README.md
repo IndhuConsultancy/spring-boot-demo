@@ -46,26 +46,34 @@
 #### *connecting GitHub with current project:*
 
 1. Install EGit to eclipse by:
-1.1 Eclipse -> Help Menu -> Install New Software
-1.2 Click on Add button
-1.3 In name type ``` EGit ```
-1.4 In Location type ```https://download.eclipse.org/egit/updates ``` and click Next
-1.5 Select all GIT packages and click Next
-1.6 Then accept aggerement and close the dialog.
+    1. Eclipse -> Help Menu -> Install New Software
+    2. Click on Add button
+    3. In name type ``` EGit ```
+    4. In Location type ```https://download.eclipse.org/egit/updates ``` and click Next
+    5. Select all GIT packages and click Next
+    6. Then accept aggerement and close the dialog.
 2. Connect Git to repo:
-2.1 File -> import and select Projects from Git and click Next
-2.2 Select Clone URI and click next
-2.3 Paste the repo url in URI field, then input GitHub credentials and click Next.
+    1. File -> import and select Projects from Git and click Next
+    2. Select Clone URI and click next
+    3. Paste the repo url in URI field, then input GitHub credentials and click Next.
 3. Setting up SSH connection with GitHub:
-3.1 Install ssh-agent in your OS.
-3.2 If windows, open a terminal with admin priveleges and set startType to manual by using this command ```Get-Service -Name ssh-agent | Set-Service -StartupType Manual```.
-3.2 Create an RSA key with this command ```ssh-keygen -t rsa -b 4096 -C "indhu.consultancy.services@gmail.com"```.
-3.3 Add the key to ssh by this command ```ssh-add .\indhu.consultancy.services@gmail.com_github```.
-3.4 Copy the contents public key file and add it to ```Github -> Settings -> SSH -> Add SSH -> name a tile and paste the content in SSH-key field```
-3.5 Check if connections is established using this command ``` ssh -T git@github.com```
+    1. Install ssh-agent in your OS.
+    2. If windows, open a terminal with admin priveleges and set startType to manual by using this command ```Get-Service -Name ssh-agent | Set-Service -StartupType Manual```.
+    3. Create an RSA key with this command ```ssh-keygen```.
+    4. Provide key name in such a way ```USERNAME-HOST_ALGORITHM```
+    5. Add the key to ssh by this command ```ssh-add FILE_NAME_OF_KEY```
+    6. Copy the contents public key file and add it to ```Github -> Settings -> SSH -> Add SSH -> name a tile and paste the content in SSH-key field```
+    7. Create a config file in ```~/.ssh``` folder.
+    8. write down the below code in config file:
+  ```
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/USERNAME-HOST_ALGORITHM
+```
+
 4. Setting up Git user in local repo:
-4.1 Go to the location in which the repo is present
-4.2 Configure user email using ```git config user.email indhu.consultancy.services@gmail.com```
-4.3
+    1 Go to the location in which the repo is present
+    2 Configure user email using ```git config user.email indhu.consultancy.services@gmail.com```
 
 
