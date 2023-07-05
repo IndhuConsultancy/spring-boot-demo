@@ -35,28 +35,14 @@
 7. Select java 17
 8. Click Generate to download the zip file and extract it.
 
-#### *Initializing spring project in eclipse:*
-
-1. Open Eclipse and select import project from File -> import project.
-2. Select "Existing Maven Projects" and click Next.
-3. Select the extracted folder and click Next.
-3. Make sure POM file is selected and click Finish.
-4. Import will complete in few minutes.
 
 #### *connecting GitHub with current project:*
 
-1. Install EGit to eclipse by:
-    1. Eclipse -> Help Menu -> Install New Software
-    2. Click on Add button
-    3. In name type ``` EGit ```
-    4. In Location type ```https://download.eclipse.org/egit/updates ``` and click Next
-    5. Select all GIT packages and click Next
-    6. Then accept aggerement and close the dialog.
-2. Connect Git to repo:
+1. Connect Git to repo:
     1. File -> import and select Projects from Git and click Next
     2. Select Clone URI and click next
     3. Paste the repo url in URI field, then input GitHub credentials and click Next.
-3. Setting up SSH connection with GitHub:
+2. Setting up SSH connection with GitHub:
     1. Install ssh-agent in your OS.
     2. If windows, open a terminal with admin priveleges and set startType to manual by using this command ```Get-Service -Name ssh-agent | Set-Service -StartupType Manual```.
     3. Create an RSA key with this command ```ssh-keygen```.
@@ -72,8 +58,15 @@ Host github.com
     IdentityFile ~/.ssh/USERNAME-HOST_ALGORITHM
 ```
 
-4. Setting up Git user in local repo:
-    1 Go to the location in which the repo is present
-    2 Configure user email using ```git config user.email indhu.consultancy.services@gmail.com```
+3. Setting up Git user in local repo:
+    1. Go to the location in which the repo is present
+    2. Configure user email using ```git config user.email indhu.consultancy.services@gmail.com```
 
+#### *Initializing spring project in eclipse:*
 
+1. Copy and paste the Sprint boot extracted files to the git initialized folder
+2. Open Eclipse and select import project from File -> import project.
+2. Select "Existing Maven Projects" and click Next.
+3. Select the git initialized folder and click Next.
+3. Make sure POM file is selected and click Finish.
+4. Import will complete in few minutes.
